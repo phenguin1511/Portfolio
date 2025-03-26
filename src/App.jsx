@@ -12,9 +12,9 @@ const App = () => {
       <section className='#services'>
         <Services />
       </section>
-      <section className='#portfolio'>
-        <Portfolio />
-      </section>
+      {/* <section className='#portfolio'> */}
+      <Portfolio />
+      {/* </section> */}
       <section className='#contact'>
         <Contact />
       </section>

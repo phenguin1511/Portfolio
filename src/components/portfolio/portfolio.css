@@ -1,5 +1,109 @@
 .portfolio {
-      padding      : 20px;
-      border-radius: 10px;
-      box-shadow   : 0 0 10px rgba(0, 0, 0, 0.1);
+      height  : 400vh;
+      position: relative;
+}
+
+.pList {
+      position   : sticky;
+      top        : 0;
+      display    : flex;
+      height     : 100vh;
+      width      : max-content;
+      will-change: transform;
+}
+
+.pItem {
+      height         : 100vh;
+      width          : 100vw;
+      overflow       : hidden;
+      display        : flex;
+      align-items    : center;
+      justify-content: center;
+      gap            : 100px;
+}
+
+.pItem:nth-child(1) {
+      background-color: linear-gradient(to bottom, #12071f, #2f204e);
+}
+
+.pItem:nth-child(2) {
+      background-color: linear-gradient(to bottom, #2f204e, #4a317c);
+}
+
+.pItem:nth-child(3) {
+      background-color: linear-gradient(to bottom, #4a317c, #5c2c8d);
+}
+
+.pProcess {
+      position: sticky;
+      width   : 80px;
+      height  : 80px;
+      left    : 0;
+      bottom  : 80%;
+}
+
+.pImg {
+      width        : 40%;
+      overflow     : hidden;
+      border-radius: 20px;
+}
+
+.pImg img {
+      width     : 100%;
+      height    : 100%;
+      object-fit: cover;
+}
+
+.pText {
+      width         : 40%;
+      display       : flex;
+      flex-direction: column;
+      gap           : 20px;
+}
+
+.pText h1 {
+      font-size: 56px;
+}
+
+.pText p {
+      font-weight: 300;
+}
+
+.pText button {
+      width           : max-content;
+      padding         : 12px;
+      border-radius   : 10px;
+      border          : none;
+      font-weight     : 500;
+      background-color: pink;
+      cursor          : pointer;
+      transition      : background-color 0.3s ease;
+      /* Thêm hiệu ứng mượt mà cho button */
+}
+
+.pText button:hover {
+      background-color: #ff69b4;
+      /* Hiệu ứng hover */
+}
+
+
+
+
+@media (max-width: 1024px) {
+      .pItem {
+            flex-direction: column;
+      }
+
+      .pText {
+            width: 70%;
+      }
+
+      .pImg {
+            width: 80%;
+      }
+
+      .pProcess {
+            bottom: 100px;
+            left  : 100%;
+      }
 }

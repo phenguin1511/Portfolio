@@ -1,8 +1,149 @@
 import './portfolio.css';
-const Portfolio = () => {
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
+
+const items = [
+      {
+            id: 1,
+            title: 'Booking Care',
+            image: '/p1.jpg',
+            description: 'Make an appointment based on your specialty, medical facility and receive follow-up and treatment forms conveniently and quickly.',
+            link: 'https://www.google.com'
+      },
+      {
+            id: 2,
+            title: 'Shopee Clone Client',
+            image: '/p2.jpg',
+            description: 'A clone of the Shopee app, a platform for buying and selling products online.',
+            link: 'https://www.google.com'
+      },
+      {
+            id: 3,
+            title: 'Twitter Clone Server API',
+            image: '/p3.jpg',
+            description: 'A clone of the Twitter app, a platform for social media.',
+            link: 'https://www.google.com'
+      }
+]
+
+const imgVariants = {
+      initial: {
+            x: -100, // Giảm khoảng cách để chuyển động tinh tế hơn
+            y: 50,   // Bắt đầu từ dưới lên một chút
+            scale: 0.8, // Thu nhỏ ban đầu
+            opacity: 0,
+            rotate: -10, // Xoay nhẹ để thêm sự thú vị
+      },
+      animate: {
+            x: 0,
+            y: 0,
+            scale: 1, // Phóng to về kích thước thật
+            opacity: 1,
+            rotate: 0, // Trở về góc ban đầu
+            transition: {
+                  duration: 0.8, // Tăng thời gian để mượt hơn
+                  ease: 'easeOut', // Chuyển động chậm dần ở cuối
+                  type: 'spring', // Thêm hiệu ứng bật nhẹ
+                  stiffness: 100, // Độ cứng của lò xo
+                  damping: 15, // Giảm dao động
+            },
+      },
+};
+
+const textVariants = {
+      initial: {
+            x: 100,
+            y: 50,
+            opacity: 0,
+
+      },
+      animate: {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            transition: {
+                  duration: 0.6,
+                  ease: 'easeInOut',
+                  staggerChildren: 0.2,
+
+            },
+      },
+};
+
+const ListItem = ({ item }) => {
+      const ref = useRef();
+      const isInView = useInView(ref, { margin: '-100px' });
       return (
-            <div className="portfolio">
-                  <h1>Portfolio</h1>
+            <div className="pItem" ref={ref}>
+                  <motion.div className="pImg" variants={imgVariants} initial="initial" animate={isInView ? 'animate' : 'initial'}>
+                        <img src={item.image} alt={item.title} />
+                  </motion.div>
+                  <motion.div className="pText" variants={textVariants} initial="initial" animate={isInView ? 'animate' : 'initial'}>
+                        <h1>{item.title}</h1>
+                        <p>{item.description}</p>
+                        <a href={item.link} target="_blank" rel="noopener noreferrer">
+                              <button>View Project</button>
+                        </a>
+                  </motion.div>
+            </div>
+      )
+}
+
+const Portfolio = () => {
+      const [containerDistance, setContainerDistance] = useState(0);
+
+      const ref = useRef(null);
+      useEffect(() => {
+            if (ref.current) {
+                  const react = ref.current.getBoundingClientRect();
+                  setContainerDistance(react.left);
+            }
+      }, []);
+
+      const { scrollYProgress } = useScroll({ target: ref });
+      const xTranslate = useTransform(scrollYProgress, [0, 1], [0, -window.innerWidth * items.length]);
+      return (
+            <div className="portfolio" ref={ref}>
+                  <motion.div className="pList" style={{ x: xTranslate }}>
+                        <div className="emty"
+                              style={{
+                                    width: window.innerWidth - containerDistance
+                              }}>
+
+                        </div>
+                        {items.map(item => (
+                              <ListItem key={item.id} item={item} />
+                        ))}
+                  </motion.div>
+                  <section />
+                  <section />
+                  <section />
+
+                  <div className="pProcess">
+                        <svg width='100%' height='100%' viewBox='0 0 160 160' >
+                              <circle
+                                    cx='80'
+                                    cy='80'
+                                    r='70'
+                                    stroke='#ddd'
+                                    strokeWidth={20}
+                                    fill='none'
+                              />
+                              <motion.circle
+                                    cx='80'
+                                    cy='80'
+                                    r='70'
+                                    stroke='red'
+                                    strokeWidth={20}
+                                    fill='none'
+                                    style={{
+                                          pathLength: scrollYProgress,
+                                          transform: 'rotate(90deg)',
+                                          transformOrigin: '80px 80px',
+                                    }}
+                              />
+                        </svg>
+                  </div>
             </div>
       )
 }
