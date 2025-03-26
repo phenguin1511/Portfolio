@@ -13,6 +13,8 @@
       z-index : -1;
 }
 
+
+
 .himg {
       position: absolute;
       top     : 0;
@@ -20,9 +22,9 @@
       right   : 0;
       left    : 0;
       margin  : auto;
-      height  : 80%;
+      height  : 100%;
       width   : max-content;
-      z-index : -1;
+      z-index : 0;
 }
 
 .himg img {

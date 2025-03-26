@@ -1,3 +1,4 @@
+
 import './hero.css';
 import Speech from './Speech';
 import { motion } from 'framer-motion';
@@ -5,6 +6,11 @@ import Title from './Title';
 import Award from './Award';
 import Follow from './Follow';
 import Contact from './Contact';
+import Shape from './Shape';
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+
+
 const certificateVariants = {
       initial: { opacity: 0, y: 75 },
       animate: {
@@ -66,10 +72,17 @@ const Hero = () => {
                         <Contact />
                   </div>
                   <div className="bg">
+
                         {/** 3D Background */}
+                        <Canvas>
+                              <Suspense fallback={<span>...loading</span>}>
+                                    <Shape />
+                              </Suspense>
+                        </Canvas>
                         <div className="himg">
                               <img src="/hero.png" alt="bg" />
                         </div>
+
                   </div>
             </div>
       );
