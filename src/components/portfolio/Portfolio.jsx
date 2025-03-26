@@ -28,24 +28,24 @@ const items = [
 
 const imgVariants = {
       initial: {
-            x: -100, // Giảm khoảng cách để chuyển động tinh tế hơn
-            y: 50,   // Bắt đầu từ dưới lên một chút
-            scale: 0.8, // Thu nhỏ ban đầu
+            x: -100,
+            y: 50,
+            scale: 0.8,
             opacity: 0,
-            rotate: -10, // Xoay nhẹ để thêm sự thú vị
+            rotate: -10,
       },
       animate: {
             x: 0,
             y: 0,
-            scale: 1, // Phóng to về kích thước thật
+            scale: 1,
             opacity: 1,
-            rotate: 0, // Trở về góc ban đầu
+            rotate: 0,
             transition: {
-                  duration: 0.8, // Tăng thời gian để mượt hơn
-                  ease: 'easeOut', // Chuyển động chậm dần ở cuối
-                  type: 'spring', // Thêm hiệu ứng bật nhẹ
-                  stiffness: 100, // Độ cứng của lò xo
-                  damping: 15, // Giảm dao động
+                  duration: 0.8,
+                  ease: 'easeOut',
+                  type: 'spring',
+                  stiffness: 100,
+                  damping: 15,
             },
       },
 };
