@@ -5,11 +5,19 @@ import Contact from './components/contact/Contact';
 
 const App = () => {
   return (
-    <div className=''>
-      <Hero />
-      <Services />
-      <Portfolio />
-      <Contact />
+    <div className='container'>
+      <section className='#home'>
+        <Hero />
+      </section>
+      <section className='#services'>
+        <Services />
+      </section>
+      <section className='#portfolio'>
+        <Portfolio />
+      </section>
+      <section className='#contact'>
+        <Contact />
+      </section>
     </div>
   )
 }
