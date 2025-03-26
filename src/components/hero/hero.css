@@ -201,11 +201,35 @@
       .hTitle {
             font-size: 64px;
       }
+
+      .bg {
+            height: 60%;
+            top   : auto;
+            bottom: 0;
+      }
+
+      .hImg {
+            height: 100%;
+      }
+
+      .awards {
+            width: 60%;
+      }
+
+      .bubbleContainer {
+            width: 100%;
+      }
+
+
 }
 
 @media (max-width: 1024px) {
       .hTitle {
             font-size: 56px;
+      }
+
+      .bg {
+            height: 50%;
       }
 }
 
@@ -213,4 +237,56 @@
       .hTitle {
             font-size: 48px;
       }
+
+      .hero {
+            flex-direction: column;
+      }
+
+      .hSection {
+            font-size: 48px;
+      }
+
+      .hSection.left {
+            align-items: center;
+            text-align : center;
+            gap        : 36px;
+      }
+
+      .hSection.right {
+            justify-content: end;
+      }
+
+      .awards {
+            width    : 100%;
+            font-size: 16px;
+      }
+
+      .awardList {
+            justify-content: center;
+      }
+
+      .follow {
+            display: none;
+      }
+
+      .certificate {
+            display: none;
+      }
+
+      .bubbleContainer {
+            display: none;
+      }
+
+      .contactButton {
+            display: none;
+      }
+
+      .scroll {
+            display: none;
+      }
+
+      .hSection {
+            width: 100%;
+      }
+
 }
