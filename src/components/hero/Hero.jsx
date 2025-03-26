@@ -74,14 +74,23 @@ const Hero = () => {
                   <div className="bg">
 
                         {/** 3D Background */}
-                        <Canvas>
-                              <Suspense fallback={<span>...loading</span>}>
-                                    <Shape />
-                              </Suspense>
-                        </Canvas>
-                        <div className="himg">
+                        <motion.div style={{ width: '100%', height: '100%' }}
+                              initial={{ opacity: 0, y: 100 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 10 }}>
+                              <Canvas>
+                                    <Suspense fallback={<span>...loading</span>}>
+                                          <Shape />
+                                    </Suspense>
+                              </Canvas>
+                        </motion.div>
+
+                        <motion.div className="himg"
+                              initial={{ opacity: 0, y: 75 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 1 }}>
                               <img src="/hero.png" alt="bg" />
-                        </div>
+                        </motion.div>
 
                   </div>
             </div>

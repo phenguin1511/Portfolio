@@ -25,8 +25,8 @@ const Title = () => {
                   <span>
                         <TypeAnimation
                               sequence={['I am Nguyen Phuc']}
-                              speed={10}
-                              deletionSpeed={10}
+                              speed={1}
+                              deletionSpeed={1}
                         />
                   </span>
             </motion.h1>

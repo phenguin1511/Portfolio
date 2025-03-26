@@ -7,6 +7,7 @@
 html {
       scroll-snap-type: y mandatory;
       scroll-behavior : smooth;
+      will-change     : scroll-position;
 }
 
 body {
@@ -33,6 +34,7 @@ a {
 section {
       height           : 100vh;
       scroll-snap-align: center;
+      overflow         : hidden;
 }
 
 
