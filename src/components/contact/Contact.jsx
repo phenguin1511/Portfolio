@@ -47,9 +47,12 @@ const Contact = () => {
       };
       const formRef = useRef();
       const isInView = useInView(formRef, { margin: '-200px' });
+      if (isInView) {
+            document.querySelector('.pProcess').style.display = 'none';
+      }
       return (
             <div className="contact" ref={formRef}>
-                  <div className="cSection">
+                  <div className="cSection left">
                         <motion.form
                               ref={form}
                               onSubmit={sendEmail}
@@ -74,7 +77,7 @@ const Contact = () => {
                               {error && <p style={{ color: 'red' }} className="error">Email not sent</p>}
                         </motion.form>
                   </div>
-                  <motion.div className="cSection"
+                  <motion.div className="cSection right"
                         variants={formVariants}
                         animate={isInView ? 'animate' : 'initial'}
                   >

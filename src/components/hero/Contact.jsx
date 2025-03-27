@@ -3,8 +3,9 @@ import { motion } from 'framer-motion';
 
 
 const Contact = () => {
+      const resume = '/CV_Backend_Developer_Le_Hoai_Nguyen_Phuc.pdf'
       return (
-            <motion.a href="#contact" className="contactLink"
+            <motion.a href={resume} className="contactLink" download={resume}
 
                   animate={{
                         x: [200, 0],
@@ -23,13 +24,13 @@ const Contact = () => {
                               repeatType: 'linear'
                         }}>
                         <svg viewBox="0 0 200 200" width="150px" height="150px">
-                              <circle cx="100" cy="100" r="90" fill="pink" />
+                              <circle cx="100" cy="100" r="90" fill="#e30613" />
                               <path id="innerCirclePath" fill="none" d="M 100, 100 m -60, 0 a 60,60 0 1,0 120,0 a 60,60 0 1,0 -120,0" />
                               <text className="circleText">
                                     <textPath href="#innerCirclePath"  >Hire Me</textPath>
                               </text>
                               <text className="circleText">
-                                    <textPath href="#innerCirclePath" startOffset="44%">Contact Me</textPath>
+                                    <textPath href="#innerCirclePath" startOffset="44%">Download CV</textPath>
                               </text>
                         </svg>
                         <div className="arrow" >

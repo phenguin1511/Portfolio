@@ -19,20 +19,20 @@ const Follow = () => {
                   initial="initial"
                   animate="animate"
                   variants={followVariants}>
-                  <motion.a variants={followVariants}>
+                  <motion.a variants={followVariants} href="https://www.instagram.com/lhnphuc" target="_blank" >
                         <img src="instagram.png" alt="instagram" />
                   </motion.a>
-                  <motion.a variants={followVariants}>
+                  <motion.a variants={followVariants} href="https://www.facebook.com/lehoainguyenphuc.it" target="_blank">
                         <img src="facebook.png" alt="facebook" />
                   </motion.a>
-                  {/* <a>
-                  <img src="github.png" alt="github" />
-            </a>
-            <a>
-                  <img src="linkedin.png" alt="linkedin" />
-            </a> */}
+                  <motion.a variants={followVariants} href="www.linkedin.com/in/lehoainguyenphucit" target="_blank">
+                        <img src="linkedin.png" alt="linkedin" />
+                  </motion.a>
+                  <motion.a variants={followVariants} href="https://github.com/phenguin1511" target="_blank">
+                        <img src="github.png" alt="github" />
+                  </motion.a>
                   <motion.div variants={followVariants} className="followTextContainer">
-                        <div className="followText"> FOLLOW ME</div>
+                        <div className="followText">CONTACT ME</div>
                   </motion.div>
             </motion.div>
       );

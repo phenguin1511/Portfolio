@@ -35,7 +35,7 @@ const Speech = () => {
                               repeat={Infinity}
                         />
                   </motion.div>
-                  <motion.img variants={speechVariants} src="man.png" alt="speech" />
+                  <motion.img variants={speechVariants} src="/avatar.png" alt="speech" />
             </motion.div>
       )
 }

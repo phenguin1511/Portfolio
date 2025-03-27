@@ -64,9 +64,6 @@ const Hero = () => {
                               <motion.p variants={certificateVariants}>
                                     FRONTEND DEVELOPER
                               </motion.p>
-                              <motion.p variants={certificateVariants}>
-                                    GREAT GRADUATED
-                              </motion.p>
                         </motion.div>
                         {/** CONTACT BUTTON */}
                         <Contact />
@@ -89,7 +86,7 @@ const Hero = () => {
                               initial={{ opacity: 0, y: 75 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 1 }}>
-                              <img src="/hero.png" alt="bg" />
+                              <img src="/avatar.png" alt="bg" />
                         </motion.div>
 
                   </div>

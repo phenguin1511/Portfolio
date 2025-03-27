@@ -20,14 +20,16 @@ const Award = () => {
                   initial="initial"
                   animate="animate"
                   variants={awardVariants}>
-                  <motion.h2 variants={awardVariants}>Good Graduated</motion.h2>
+                  <motion.h2 variants={awardVariants}>Full Stack Developer</motion.h2>
                   <motion.p variants={awardVariants}>
-                        I graduated with honors from Hutech University
+                        I am a full stack developer with a passion for building web applications.
                   </motion.p>
                   <motion.div variants={awardVariants} className="awardList">
-                        <motion.img variants={awardVariants} src="/award1.png" alt="award" />
-                        <motion.img variants={awardVariants} src="/award2.png" alt="award" />
-                        <motion.img variants={awardVariants} src="/award3.png" alt="award" />
+                        <motion.img variants={awardVariants} src="/react.webp" alt="award" />
+                        <motion.img variants={awardVariants} src="/node.png" alt="award" />
+                        <motion.img variants={awardVariants} src="/mongodb.png" alt="award" />
+                        <motion.img variants={awardVariants} src="/expressjs.png" alt="award" />
+                        <motion.img variants={awardVariants} src="/mysql.png" alt="award" />
                   </motion.div>
             </motion.div>
       );

@@ -8,21 +8,82 @@ const items = [
             title: 'Booking Care',
             image: '/p1.jpg',
             description: 'Make an appointment based on your specialty, medical facility and receive follow-up and treatment forms conveniently and quickly.',
-            link: 'https://www.google.com'
+            link: 'https://github.com/phenguin1511/BookingCare.git',
+            engineer: {
+                  react: '/react.webp',
+                  node: '/node.png',
+                  express: '/expressjs.png',
+                  mysql: '/mysql.png',
+                  html: '/html.png',
+                  css: '/css.png',
+                  javascript: '/javascript.png',
+                  bootstrap: '/bootstrap.png',
+
+            }
       },
       {
             id: 2,
             title: 'Shopee Clone Client',
             image: '/p2.jpg',
             description: 'A clone of the Shopee app, a platform for buying and selling products online.',
-            link: 'https://www.google.com'
+            link: 'https://github.com/phenguin1511/Shopee-Clone.git',
+            engineer: {
+
+                  react: '/react.webp',
+                  html: '/html.png',
+                  css: '/css.png',
+                  typescript: '/typescript.png',
+                  tailwind: '/tailwind.png',
+
+            }
       },
       {
             id: 3,
             title: 'Twitter Clone Server API',
             image: '/p3.jpg',
             description: 'A clone of the Twitter app, a platform for social media.',
-            link: 'https://www.google.com'
+            link: 'https://github.com/phenguin1511/Twitter-Clone.git',
+            engineer: {
+
+                  typescript: '/typescript.png',
+                  node: '/node.png',
+                  express: '/expressjs.png',
+                  mongodb: '/mongodb.png',
+                  postman: '/postman.png',
+
+            }
+      },
+      {
+            id: 4,
+            title: 'Portfolio Website',
+            image: '/p4.jpg',
+            description: 'A portfolio website for a software engineer.',
+            link: 'https://github.com/phenguin1511/Portfolio.git',
+            engineer: {
+
+                  react: '/react.webp',
+                  html: '/html.png',
+                  css: '/css.png',
+                  typescript: '/typescript.png',
+                  three: '/three.png',
+                  motion: '/motion.png',
+
+            }
+      },
+      {
+            id: 5,
+            title: 'E-commerce Website',
+            image: '/p5.jpg',
+            description: 'A e-commerce website for a shop.',
+            link: 'https://github.com/phenguin1511/E-commerce-Website.git',
+            engineer: {
+                  dotnet: '/dotnet.png',
+                  sqlserver: '/sqlserver.png',
+                  html: '/html.png',
+                  css: '/css.png',
+                  javascript: '/javascript.png',
+                  bootstrap: '/bootstrap.png',
+            }
       }
 ]
 
@@ -81,9 +142,22 @@ const ListItem = ({ item }) => {
                   <motion.div className="pText" variants={textVariants} initial="initial" animate={isInView ? 'animate' : 'initial'}>
                         <h1>{item.title}</h1>
                         <p>{item.description}</p>
+
+                        <div className="pEngineer">
+                              {Object.keys(item.engineer).map(key => (
+
+                                    <div className="pEngineerItem" key={key}>
+                                          <img src={item.engineer[key]} alt={key} />
+                                    </div>
+                              ))}
+                        </div>
+
                         <a href={item.link} target="_blank" rel="noopener noreferrer">
                               <button>View Project</button>
                         </a>
+
+
+
                   </motion.div>
             </div>
       )
@@ -118,7 +192,8 @@ const Portfolio = () => {
                   <section />
                   <section />
                   <section />
-
+                  <section />
+                  <section />
                   <div className="pProcess">
                         <svg width='100%' height='100%' viewBox='0 0 160 160' >
                               <circle
